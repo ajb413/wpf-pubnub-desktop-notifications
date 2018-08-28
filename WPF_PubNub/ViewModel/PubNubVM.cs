@@ -6,29 +6,33 @@ namespace WPF_PubNub.VM
 {
     class PubNubVM : Notifier
     {
-        private PubNubHelper _pubNum = null;
+        private PubNubHelper _pubNub = null;
         private string _windowName = "Desktop Notification with PubNub";
          
         public void Init()
         {
-            if (_pubNum == null)
-                _pubNum = new PubNubHelper();
+            if (_pubNub == null)
+                _pubNub = new PubNubHelper();
 
-            _pubNum.Init();
+            _pubNub.Init();
         }
+
         public void Listen()
         {
-            _pubNum.Listen();
+            _pubNub.Listen();
         }
+
         public void PublishMessage()
         {
-            _pubNum.Publish();
+            _pubNub.Publish();
         }
+
         public void MainWindowLoaded(object sender, RoutedEventArgs e)
         {
             Init();
             Listen();
         }
+
         public string WindowName
         {
             get { return _windowName; }
@@ -37,7 +41,6 @@ namespace WPF_PubNub.VM
                 _windowName = value;
                 OnPropertyChanged("WindowName");
             }
-
         }
 
         double _wBtn = 200;
@@ -49,7 +52,6 @@ namespace WPF_PubNub.VM
                 _wBtn = value;
                 OnPropertyChanged("ButtonWidth");
             }
-
         }
 
         double _hBtn = 150;
@@ -61,7 +63,6 @@ namespace WPF_PubNub.VM
                 _hBtn = value;
                 OnPropertyChanged("ButtonHeight");
             }
-
         }
 
         string _btnContent = "Trigger Desktop Nonification";
@@ -73,9 +74,7 @@ namespace WPF_PubNub.VM
                 _btnContent = value;
                 OnPropertyChanged("ButtonContent");
             }
-
         }
-        
     }
 
     public class Notifier : INotifyPropertyChanged
