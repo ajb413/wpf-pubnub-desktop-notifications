@@ -10,6 +10,9 @@ A full WPF tutorial is available on the PubNub Blog, click on this picture to vi
     <img alt="PubNub Blog" src="https://i.imgur.com/aJ927CO.png" width=260 height=98/>
 </a>
 
+<br>
+<br>
+
 **Forever Free PubNub API keys are required in the View Model!**, click on this picture to signup:
 
 <a href="https://dashboard.pubnub.com/signup?devrel_gh=wpf-pubnub-desktop-notifications">
