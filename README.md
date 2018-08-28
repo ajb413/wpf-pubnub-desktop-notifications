@@ -4,6 +4,8 @@ Trigger desktop notifications on one or many Windows Desktop apps using PubNub a
 
 ![WPF Custom Notification](https://i.imgur.com/G45tXJY.png)
 
+## Tutorial
+
 A full WPF tutorial is available on the PubNub Blog, click on this picture to visit:
 
 <a href="https://www.pubnub.com/blog/c-sharp-desktop-notifications-wpf-mvvm/?devrel_gh=wpf-pubnub-desktop-notifications">
@@ -13,12 +15,14 @@ A full WPF tutorial is available on the PubNub Blog, click on this picture to vi
 <br>
 <br>
 
-**Forever Free PubNub API keys are required in the View Model!**, click on this picture to signup:
+## PubNub
+**Forever Free PubNub API keys are required in the View Model!** Click on this picture to signup for free, now:
 
 <a href="https://dashboard.pubnub.com/signup?devrel_gh=wpf-pubnub-desktop-notifications">
     <img alt="PubNub Signup" src="https://i.imgur.com/og5DDjf.png" width=260 height=97/>
 </a>
 
+## Desktop App
 Click on a button to trigger a PubNub message. All clients, around the world, that are subscribed to the PubNub channel will see the notification in real time!
 
 ![WPF Desktop App](https://i.imgur.com/iykIGCw.png)
