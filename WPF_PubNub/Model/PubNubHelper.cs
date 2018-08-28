@@ -11,14 +11,13 @@ namespace WPF_PubNub.Model
         Pubnub pubnub;
         private readonly string ChannelName = "win-notification";
 
-        //Init and Subscribe PubNub using your PublishKey and SubscribeKey
         public void Init()
         {
             //Init
             PNConfiguration pnConfiguration = new PNConfiguration
             {
-                PublishKey = "pub-c-ae8e586a-3d53-40e4-b799-55645e796bb6",
-                SubscribeKey = "sub-c-373b79a4-a116-11e8-96b6-ea0414d4b606",
+                PublishKey = "__YOUR_PUBNUB_PUBLISH_KEY_HERE__",
+                SubscribeKey = "__YOUR_PUBNUB_SUBSCRIBE_KEY_HERE__",
                 Secure = true
             };
             pubnub = new Pubnub(pnConfiguration);
@@ -32,18 +31,17 @@ namespace WPF_PubNub.Model
            .Execute();
         }
 
-        //Publish the message
+        //Publish a message
         public void Publish()
         {
-            //Buils JSON Message using JSON data type
             JsonMsg Person = new JsonMsg
             {
-                Name = "John",
+                Name = "John Doe",
                 Description = "Description",
                 Date = DateTime.Now.ToString()
             };
 
-            //Convert the data type to string
+            //Convert to string
             string arrayMessage = JsonConvert.SerializeObject(Person);
 
             pubnub.Publish()
@@ -63,11 +61,9 @@ namespace WPF_PubNub.Model
                     //Show the message as a WPF window message like WIN-10 toast
                     NotificationWindow ts = new NotificationWindow();
 
-
-                    //Convert the message to JSON data type
+                    //Convert the message to JSON
                     JsonMsg bsObj = JsonConvert.DeserializeObject<JsonMsg>(message.Message.ToString());
 
-                    //Build string from the JSON data type message
                     string messageBoxText = "Name: " + bsObj.Name + Environment.NewLine + "Description: " + bsObj.Description + Environment.NewLine + "Date: " + bsObj.Date;
                     ts.NotifText.Text = messageBoxText;
                     ts.Show();
